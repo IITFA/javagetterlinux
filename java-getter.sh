@@ -10,7 +10,7 @@ VAR32=$(wget -q -O - https://www.java.com/en/download/linux_manual.jsp | grep -o
 VAR64=$(wget -q -O - https://www.java.com/en/download/linux_manual.jsp | grep -o '<a title="Download Java software for Linux x64" href=['"'"'"][^"'"'"']*['"'"'"]' | sed -e 's/^<a title="Download Java software for Linux x64" href=["'"'"']//' -e 's/["'"'"']$//' | head -n -1)
 
 ##remove any old version
-rm -r java
+rm -r java 2> /dev/null
 
 ##download
 mkdir tmp
